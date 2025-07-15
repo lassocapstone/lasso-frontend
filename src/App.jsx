@@ -4,7 +4,7 @@ import Login from "./auth/Login";
 import Register from "./auth/Register";
 import Tasks from "./Tasks";
 import Alerts from "./Alerts";
-import ProfileInfo from "./Profile";
+
 
 export default function App() {
   return (
