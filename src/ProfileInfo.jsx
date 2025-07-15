@@ -1,7 +1,9 @@
 import useQuery from "./api/useQuery";
+import { useParams } from "react-router";
 
 const ProfileInfo = () => {
-  const { data: profileData } = useQuery("/users/:id", "profile");
+  const { userID } = useParams();
+  const { data: profileData } = useQuery(`/users/${userID}`, "profile");
 
   return (
     <>
