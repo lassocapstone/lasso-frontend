@@ -15,7 +15,6 @@ export default function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/tasks" element={<Tasks />} />
         <Route path="/alerts" element={<Alerts />} />
-        <Route path="/profile" element={<ProfileInfo />} />
       </Route>
     </Routes>
   );
