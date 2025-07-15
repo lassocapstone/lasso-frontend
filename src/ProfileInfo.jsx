@@ -1,7 +1,7 @@
 import useQuery from "./api/useQuery";
 
 const ProfileInfo = () => {
-  const { data: profileData } = useQuery("/users/profile", "profile");
+  const { data: profileData } = useQuery("/users/:id", "profile");
 
   return (
     <>
