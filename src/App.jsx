@@ -11,7 +11,7 @@ export default function App() {
         <Route index element={<p>Home page</p>} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/users/:userID" element={<ProfileInfo />} />
+        <Route path="/profile" element={<ProfileInfo />} />
       </Route>
     </Routes>
   );
