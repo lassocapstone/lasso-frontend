@@ -2,23 +2,24 @@ import useQuery from "./api/useQuery";
 
 const ProfileInfo = () => {
   const { data: profileData } = useQuery("/users", "profile");
+  const { id, name, account_type: accountType, contact_number: contactNum, role, status, emergency_contact_id: emergencyContactID } = profileData;
 
   return (
     <>
       {
         profileData &&
         <>
-          <h1>Welcome User {profileData.name}!</h1>
+          <h1>Welcome User {name}!</h1>
           <h2>Here is Your User Profile Info</h2>
-          <p>User ID: {profileData.id}</p>
-          <p>Name: {profileData.name}</p>
-          <p>Account Type: {profileData.account_type === 'man' ? 'Manager' :
-            profileData.account_type === 'org' ? 'Organizer' :
-              profileData.account_type === 'sub' ? 'Subordinate' : null}</p>
-          <p>Contact Number: {`(${profileData.contact_number.substring(0, 3)}) ${profileData.contact_number.substring(3, 6)}-${profileData.contact_number.substring(6, 10)}`}</p>
-          {profileData.role && <p>`Role: ${profileData.role}`</p>}
-          <p>Status: {profileData.status ? "good" : "bad"}</p>
-          <p>Emergency Contact ID: {profileData.emergency_contact_id}</p>
+          <p>User ID: {id}</p>
+          <p>Name: {name}</p>
+          <p>Account Type: {accountType === 'man' ? 'Manager' :
+            accountType === 'org' ? 'Organizer' :
+              accountType === 'sub' ? 'Subordinate' : null}</p>
+          <p>Contact Number: {`(${contactNum.substring(0, 3)}) ${contactNum.substring(3, 6)}-${contactNum.substring(6, 10)}`}</p>
+          {role && <p>`Role: ${role}`</p>}
+          <p>Status: {status ? "good" : "bad"}</p>
+          <p>Emergency Contact ID: {emergencyContactID}</p>
         </>
       }
     </>
