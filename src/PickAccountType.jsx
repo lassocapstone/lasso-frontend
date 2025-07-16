@@ -17,9 +17,9 @@ const PickAccountType = () => {
     <>
       <h1>Pick an Account Type</h1>
       <form action={addAccountType}>
-        <label className='radio'> <input type="radio" name="accountType" value="organizer" /> Organizer </label>
-        <label className='radio'> <input type="radio" name="accountType" value="manager" /> Manager</label>
-        <label className='radio'> <input type="radio" name="accountType" value="subordinate" /> Subordinate</label>
+        <label className='radio'> <input type="radio" name="accountType" value="org" /> Organizer </label>
+        <label className='radio'> <input type="radio" name="accountType" value="man" /> Manager</label>
+        <label className='radio'> <input type="radio" name="accountType" value="sub" /> Subordinate</label>
         <button type="submit">Submit</button>
       </form>
     </>
