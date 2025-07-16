@@ -31,7 +31,7 @@ const TaskCreation = () => {
         </label>
         <label>
           End Time
-          <input type="text" name="endtime" />
+          <input type="text" name="endTime" />
         </label>
         <label>
           Location
