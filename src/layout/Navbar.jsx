@@ -17,11 +17,11 @@ export default function Navbar() {
             <NavLink to="/profile">User Profile</NavLink>
             <button onClick={() => {
               logout();
-              navigate('/login');
+              navigate('/');
             }}>Log out</button>
           </>
         ) : (
-          <NavLink to="/login">Log in</NavLink>
+          <NavLink to="/">Log in</NavLink>
         )}
       </nav>
     </header>
