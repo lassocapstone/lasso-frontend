@@ -5,6 +5,9 @@ import Register from "./auth/Register";
 import Tasks from "./Tasks";
 import Alerts from "./Alerts";
 import AccountHomePage from "./AccountHomePage";
+import ProfileInfo from "./ProfileInfo";
+import PickAccountType from "./PickAccountType";
+import Error404 from "./Error404";
 
 export default function App() {
   return (
@@ -16,6 +19,9 @@ export default function App() {
         <Route path="/tasks" element={<Tasks />} />
         <Route path="/alerts" element={<Alerts />} />
         <Route path="/accounthomepage" element={<AccountHomePage />} />
+        <Route path="/profile" element={<ProfileInfo />} />
+        <Route path="/pickaccount" element={<PickAccountType />} />
+        <Route path="/*" element={<Error404 />} />
       </Route>
     </Routes>
   );

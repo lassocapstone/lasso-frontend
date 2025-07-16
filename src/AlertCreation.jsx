@@ -8,8 +8,9 @@ const AlertCreation = () => {
     const name = formData.get("name");
     const message = formData.get("message");
     const eventID = formData.get("event_id");
+    const recipientID = formData.get("recipient_id");
     const senderID = formData.get("sender_id");
-    add({ isOkay, name, message, eventID, senderID });
+    add({ isOkay, name, message, eventID, recipientID, senderID });
   };
 
   return (
@@ -31,6 +32,10 @@ const AlertCreation = () => {
         <label>
           Event ID
           <input type="text" name="event_id" />
+        </label>
+        <label>
+          Recipient ID
+          <input type="text" name="recipient_id" />
         </label>
         <label>
           Sender ID
