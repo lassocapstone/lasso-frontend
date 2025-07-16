@@ -4,7 +4,7 @@ import Login from "./auth/Login";
 import Register from "./auth/Register";
 import Tasks from "./Tasks";
 import Alerts from "./Alerts";
-
+import AccountHomePage from "./AccountHomePage";
 
 export default function App() {
   return (
@@ -15,6 +15,7 @@ export default function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/tasks" element={<Tasks />} />
         <Route path="/alerts" element={<Alerts />} />
+        <Route path="/accounthomepage" element={<AccountHomePage />} />
       </Route>
     </Routes>
   );
