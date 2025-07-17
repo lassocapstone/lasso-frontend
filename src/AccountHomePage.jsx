@@ -1,41 +1,51 @@
-//use actual event name when the endpoint is available
-import useQuery from "./api/useQuery";
 import Tasks from "./Tasks";
+import TaskCreation from "./TaskCreation";
+import Alerts from "./Alerts";
+import AlertCreation from "./AlertCreation";
 import { Link } from "react-router";
+import { useAuth } from "./auth/AuthContext";
 
 const AccountHomePage = () => {
-  const { data: userData } = useQuery("/users", "user");
-  const { data: eventsData } = useQuery("/events", "event");
+  const { accountType } = useAuth();
 
   return (
     <>
       {
-        userData &&
-          userData.account_type === "org" ?
+        accountType &&
+          accountType === "org" ?
           <>
             <h1>Welcome Organizer!</h1>
-            <h1>Current Event: {eventsData.name}</h1>
-            <h1>Alerts</h1>
+            <h1>Current Event: </h1>
+            <AlertCreation />
+            <Alerts />
+            <TaskCreation />
+            <Tasks />
             <Link to="/"><button>Event Settings</button></Link>
             {/* Insert event settings route */}
           </>
           :
-          userData.account_type === "man" ?
+          accountType === "man" ?
             <>
               <h1>Welcome Manager!</h1>
-              <h1>Current Event: {eventsData.name}</h1>
-              <h1>Your Roster</h1>
+              <h2>Current Event: </h2>
+              <h2>Your Roster</h2>
+              <AlertCreation />
+              <Alerts />
+              <TaskCreation />
               <Tasks />
             </>
             :
-            userData.account_type === "sub" ?
+            accountType === "sub" ?
               <>
                 <h1>Welcome Subordinate!</h1>
-                <h1>Current Event: {eventsData.name}</h1>
+                <h1>Current Event: </h1>
                 <Tasks />
               </>
               :
-              <h1>You need an account type.</h1>
+              <>
+                <h1>You need an account type.</h1>
+                <Link to="/pickaccount">Choose an account type.</Link>
+              </>
       }
     </>
   )

@@ -6,6 +6,7 @@ const AuthContext = createContext();
 
 export function AuthProvider({ children }) {
   const [token, setToken] = useState(sessionStorage.getItem("token"));
+  const [accountType, setAccountType] = useState(null);
 
   useEffect(() => {
     if (token) sessionStorage.setItem("token", token);
@@ -28,9 +29,11 @@ export function AuthProvider({ children }) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(credentials),
     });
-    const result = await response.text();
+    const result = await response.json();
     if (!response.ok) throw Error(result);
-    setToken(result);
+    setToken(result.token);
+    setAccountType(result.account_type);
+    return result.account_type;
   };
 
   const logout = () => {
@@ -38,7 +41,7 @@ export function AuthProvider({ children }) {
     sessionStorage.removeItem("token");
   };
 
-  const value = { token, register, login, logout };
+  const value = { token, register, login, logout, accountType };
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }
 

@@ -39,7 +39,7 @@ const TaskCreation = () => {
         </label>
         <label>
           Instructions
-          <input type="text" name="instructions" />
+          <textarea type="text" name="instructions" rows="10" />
         </label>
         <button>{loading ? "Adding..." : "Add Task"}</button>
         {error && <output>{error}</output>}

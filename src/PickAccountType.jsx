@@ -9,7 +9,7 @@ const PickAccountType = () => {
   const addAccountType = (formData) => {
     const accountType = formData.get("accountType");
     add({ accountType });
-    navigate('/');
+    navigate('/accounthomepage');
     //update navigate route to home page of whichever accounttype
   };
 

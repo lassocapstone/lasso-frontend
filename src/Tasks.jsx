@@ -6,14 +6,17 @@ const Tasks = () => {
 
   return (
     <>
-      <h1>List of Tasks</h1>
+      <h2>List of Tasks</h2>
       {
         tasksData &&
-        tasksData.map(task => (
-          <ul key={task.id}>
-            <TasksExpand task={task} />
-          </ul>
-        ))
+          tasksData.length ?
+          tasksData.map(task => (
+            <ul key={task.id}>
+              <TasksExpand task={task} />
+            </ul>
+          ))
+          :
+          <p>You have no tasks.</p>
       }
     </>
   )
