@@ -31,9 +31,9 @@ function EventDetails() {
   return <OrganizerView event={event} />;
   // switch (user.account_type) {
   //   case "org":
-  //     return <OrganizerView />;
+  //     return <OrganizerView event={event}/>;
   //   case "man":
-  //     //return <ManagerView />;
+  //     //return <ManagerView event={event}/>;
   //     return "in progress";
   //   default:
   //     return <p>You do not have permission to view this event.</p>;
