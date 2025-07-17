@@ -13,9 +13,8 @@ export default function App() {
   return (
     <Routes>
       <Route element={<Layout />}>
-        <Route index element={<p>Home page</p>} />
+        <Route index element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
         <Route path="/tasks" element={<Tasks />} />
         <Route path="/alerts" element={<Alerts />} />
         <Route path="/accounthomepage" element={<AccountHomePage />} />
