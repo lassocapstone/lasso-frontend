@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router";
-import useQuery from "./api/useQuery";
+import useQuery from "../api/useQuery";
 import { useAuth } from "./AuthContext";
 
 /** A form that allows users to log into an existing account. */
 export default function Login() {
-  const { data: userData } = useQuery('/users', 'user');
+  const { data: userData } = useQuery("/users", "user");
   const { login } = useAuth();
   const navigate = useNavigate();
 
@@ -16,7 +16,11 @@ export default function Login() {
     const password = formData.get("password");
     try {
       await login({ username, password });
-      { userData && userData.account_type ? navigate("/") : navigate("/pickaccount") };
+      {
+        userData && userData.account_type
+          ? navigate("/")
+          : navigate("/pickaccount");
+      }
       //possibly update navigate route later
     } catch (e) {
       setError(e.message);
