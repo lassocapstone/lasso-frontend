@@ -1,4 +1,4 @@
-import { Link } from "react";
+import { Link } from "react-router";
 import useQuery from "../api/useQuery";
 
 export default function OrganizerView({ event }) {
@@ -6,7 +6,7 @@ export default function OrganizerView({ event }) {
     data: alerts,
     loading: alertsLoading,
     error: alertsError,
-  } = useQuery(`/events/${event.id}/alerts`, `alerts`);
+  } = useQuery(`/events/${event.id}/alerts/`, `alerts`);
 
   const {
     data: tasks,
@@ -18,7 +18,7 @@ export default function OrganizerView({ event }) {
   if (alertsError || tasksError) return <p>Error loading event info.</p>;
 
   return (
-    <div>
+    <>
       <h1>{event.name}</h1>
 
       <p>
@@ -27,7 +27,7 @@ export default function OrganizerView({ event }) {
 
       <section>
         <h2>Alerts</h2>
-        {alerts.length === 0 ? (
+        {!alerts || alerts.length === 0 ? (
           <p>No alerts for this event.</p>
         ) : (
           <ul>
@@ -43,17 +43,13 @@ export default function OrganizerView({ event }) {
 
       <section>
         <h2>Tasks</h2>
-        {tasks.length === 0 ? (
+        {!tasks || tasks.length === 0 ? (
           <p>No tasks created yet.</p>
         ) : (
           <ul>
             {tasks.map((task) => (
               <>
-                <li key={task.id}>{task.name} —</li>
-                <li>
-                  {task.start_time} to
-                  {task.end_time}
-                </li>
+                <li key={task.id}>{task.name}</li>
               </>
             ))}
           </ul>
@@ -71,6 +67,6 @@ export default function OrganizerView({ event }) {
         <br />
         <Link to={``}>Edit Event Settings</Link>
       </div>
-    </div>
+    </>
   );
 }

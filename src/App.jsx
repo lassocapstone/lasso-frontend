@@ -22,7 +22,7 @@ export default function App() {
         <Route path="/profile" element={<ProfileInfo />} />
         <Route path="/pickaccount" element={<PickAccountType />} />
         <Route path="/*" element={<Error404 />} />
-        <Route path="/eventdetails" element={<EventDetails />} />
+        <Route path="/eventdetails/:id" element={<EventDetails />} />
       </Route>
     </Routes>
   );
