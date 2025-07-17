@@ -1,0 +1,93 @@
+/users/register
+  post
+    name: string
+    username: string
+    password: string
+    contact_number: string (10 digits, no markers -- 1234567890)
+/users/login
+  post
+    username: string
+    password: string
+
+/events
+  get
+  post
+    Authorization: Bearer
+    name: string
+    startTime: string (timestamp: YYYY-MM-DD HH:MM:SS in 24-hour time)
+    endTime: string (timestamp: YYYY-MM-DD HH:MM:SS in 24-hour time)
+    location: string
+
+/events/:id
+  get    
+
+/events/:id/settings
+  get
+  put
+    Authorization: Bearer
+    name: string
+    startTime: string (timestamp: YYYY-MM-DD HH:MM:SS in 24-hour time)
+    endTime: string (timestamp: YYYY-MM-DD HH:MM:SS in 24-hour time)
+    location: string
+  delete
+
+/events/:id/alerts
+  get
+  post
+    Authorization: Bearer
+    isOkay: boolean
+    name: string
+    message: string
+    eventId: int
+    recipientId: int
+    (SENDER ID IS HANDLED IN THE BACKEND)
+
+/events/:id/alerts/:id
+  get
+  put
+    Authorization: Bearer
+    isOkay: boolean
+    name: string
+    message: string
+    eventId: int
+    recipientId: int
+    (SENDER ID IS HANDLED IN THE BACKEND)
+  delete
+
+/events/:id/tasks
+  get
+  post
+    Authorization: Bearer
+    name: string
+    startTime: string (timestamp: YYYY-MM-DD HH:MM:SS in 24-hour time)
+    endTime: string (timestamp: YYYY-MM-DD HH:MM:SS in 24-hour time)
+    location: string
+    instructions: string
+
+/events/:id/tasks/:id
+/events/:id/tasks
+  get
+  put
+    Authorization: Bearer
+    name: string
+    startTime: string (timestamp: YYYY-MM-DD HH:MM:SS in 24-hour time)
+    endTime: string (timestamp: YYYY-MM-DD HH:MM:SS in 24-hour time)
+    location: string
+    instructions: string
+  delete
+
+/events/:id/roster
+  get
+  post
+    Authorization: Bearer
+    eventId: int
+    userId: int
+    managerId: int    
+  delete
+
+/events/:id/roster/:managerId
+  get
+  put
+    newManagerId: int
+    oldManagerId: int
+    eventId: int
