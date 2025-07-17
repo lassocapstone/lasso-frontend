@@ -5,8 +5,8 @@ import { useParams } from "react-router";
 //should eventData be passed down through props? or just the usequery data then no props? i don't know 
 const EventEditing = () => {
   // const { id } = useParams();
-  // const { data: taskData } = useQuery(`/events/${id}/tasks`, "task");
-  // const { mutate: edit } = useMutation("PUT", `/events/${id}/tasks`, ["task"]);
+  // const { data: taskData } = useQuery(`/events/${id}/settings`, "task");
+  // const { mutate: edit } = useMutation("PUT", `/events/${id}/settings`, ["task"]);
 
   const editEvent = (formData) => {
     const name = formData.get("name");
