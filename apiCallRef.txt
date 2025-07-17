@@ -1,3 +1,6 @@
+/user
+  get
+
 /users/register
   post
     name: string
