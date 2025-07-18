@@ -42,7 +42,7 @@ export default function ManagerView({ event }) {
 
       <section>
         <h2>Roster</h2>
-        <Link to={``}>View Your Roster</Link>
+        <Link to={`./roster`}>View Your Roster</Link>
       </section>
 
       <div>
