@@ -1,5 +1,6 @@
 //use actual event name when the endpoint is available
 import useQuery from "./api/useQuery";
+import ManagerView from "./EventDetails/ManagerDetails";
 import Tasks from "./Tasks";
 import { Link } from "react-router";
 import OrganizerHome from "./OrganizerHomePage";
@@ -13,12 +14,7 @@ const AccountHomePage = () => {
       {userData && userData.account_type === "org" ? (
         <OrganizerHome />
       ) : userData.account_type === "man" ? (
-        <>
-          <h1>Welcome Manager!</h1>
-          <h1>Current Event: {eventsData.name}</h1>
-          <h1>Your Roster</h1>
-          <Tasks />
-        </>
+        <ManagerView />
       ) : userData.account_type === "sub" ? (
         <>
           <h1>Welcome Subordinate!</h1>
