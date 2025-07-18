@@ -1,12 +1,8 @@
 import useMutation from "./api/useMutation";
-import useQuery from "./api/useQuery";
-import { useParams } from "react-router";
 
-//should taskData be passed down through props? or just the usequery data then no props? i don't know 
-const TaskEditing = () => {
-  // const { id } = useParams();
-  // const { data: taskData } = useQuery(`/events/${id}/tasks/{id}`, "task");
-  // const { mutate: edit } = useMutation("PUT", `/events/${id}/tasks/:{id}`, ["task"]);
+const TaskEditing = ({ taskData }) => {
+  const { mutate: edit } = useMutation("PUT", `/events/:id/tasks/:id`, ["task"]);
+  // adjust the usemutation endpoint
 
   const editTask = (formData) => {
     const eventID = formData.get("eventID");
