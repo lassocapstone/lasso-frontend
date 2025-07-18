@@ -22,7 +22,7 @@ export default function OrganizerView({ event }) {
       <h1>{event.name}</h1>
       <h2>{event.location}</h2>
       <p>
-        {event.star_time} to {event.end_time}
+        {event.start_time} to {event.end_time}
       </p>
 
       <section>
