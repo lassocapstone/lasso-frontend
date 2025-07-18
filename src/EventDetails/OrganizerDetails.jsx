@@ -59,13 +59,13 @@ export default function OrganizerView({ event }) {
 
       <section>
         <h2>Roster</h2>
-        <Link to={`/roster`}>View Event Roster</Link>
+        <Link to={`./roster`}>View Event Roster</Link>
       </section>
 
       <div>
         <Link to={`/events/${event.id}/tasks`}>Create New Task</Link>
         <br />
-        <Link to={`/settings`}>Edit Event Settings</Link>
+        <Link to={`./settings`}>Edit Event Settings</Link>
       </div>
     </>
   );
