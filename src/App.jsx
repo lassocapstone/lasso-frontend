@@ -8,6 +8,8 @@ import AccountHomePage from "./AccountHomePage";
 import ProfileInfo from "./ProfileInfo";
 import PickAccountType from "./PickAccountType";
 import Error404 from "./Error404";
+import { Roster } from "./rosters/Roster";
+import { RosterUserDetails } from "./rosters/RosterUserDetails";
 import EventDetails from "./EventDetails/event-details-base";
 
 export default function App() {
@@ -21,6 +23,8 @@ export default function App() {
         <Route path="/accounthomepage" element={<AccountHomePage />} />
         <Route path="/profile" element={<ProfileInfo />} />
         <Route path="/pickaccount" element={<PickAccountType />} />
+        <Route path="/events/:eventId/roster" element={<Roster />} />
+        <Route path="/events/:eventId/roster/:userId" element={<RosterUserDetails />} />
         <Route path="/*" element={<Error404 />} />
         <Route path="/eventdetails/:id" element={<EventDetails />} />
       </Route>
