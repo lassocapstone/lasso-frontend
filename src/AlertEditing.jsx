@@ -1,8 +1,8 @@
 import useMutation from "./api/useMutation";
 
-const AlertEditing = ({ alertData }) => {
-  const { mutate: edit } = useMutation("PUT", `/events/:id/alerts/:id`, ["alert"]);
-  //adjust the usemutation endpoint?
+const AlertEditing = ({ eventData, alertData }) => {
+  const { mutate: edit } = useMutation("PUT", `/events/${eventData.id}/alerts/${alertData.id}`, ["alert"]);
+  //is that the right end point?
 
   const editAlert = (formData) => {
     const isOkay = formData.get("is_okay");

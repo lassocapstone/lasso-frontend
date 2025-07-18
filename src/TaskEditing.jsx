@@ -1,8 +1,8 @@
 import useMutation from "./api/useMutation";
 
-const TaskEditing = ({ taskData }) => {
-  const { mutate: edit } = useMutation("PUT", `/events/:id/tasks/:id`, ["task"]);
-  // adjust the usemutation endpoint
+const TaskEditing = ({ eventData, taskData }) => {
+  const { mutate: edit } = useMutation("PUT", `/events/${eventData.id}/tasks/${taskData.id}`, ["task"]);
+  // is this the right endpoint
 
   const editTask = (formData) => {
     const eventID = formData.get("eventID");
