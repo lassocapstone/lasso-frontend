@@ -4,6 +4,7 @@ import { useState } from "react";
 const EventEditing = ({ eventData }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const { mutate: edit } = useMutation("PUT", `/events/${eventData.id}/settings`, ["event"]);
+  const { mutate: deleteEvent } = useMutation("DELETE", `/events/${eventData.id}/settings`, ["event"]);
   //is this the right endpoint
 
   const toggleExpand = () => {
@@ -43,6 +44,7 @@ const EventEditing = ({ eventData }) => {
           <button type="submit">Submit</button>
         </form>
       }
+      <button onClick={() => deleteEvent(eventData)}>Delete Event</button>
     </>
   )
 }

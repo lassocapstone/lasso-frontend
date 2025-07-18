@@ -4,6 +4,7 @@ import { useState } from "react";
 const TaskEditing = ({ eventData, taskData }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const { mutate: edit } = useMutation("PUT", `/events/${eventData.id}/tasks/${taskData.id}`, ["task"]);
+  const { mutate: deleteTask } = useMutation("DELETE", `/events/${eventData.id}/tasks/${taskData.id}`, ["task"]);
   // is this the right endpoint
 
   const toggleExpand = () => {
@@ -47,6 +48,7 @@ const TaskEditing = ({ eventData, taskData }) => {
           <button type="submit">Submit</button>
         </form>
       }
+      <button onClick={() => deleteTask(taskData)}>Delete Task</button>
     </>
   )
 }

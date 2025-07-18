@@ -4,6 +4,7 @@ import { useState } from "react";
 const AlertEditing = ({ eventData, alertData }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const { mutate: edit } = useMutation("PUT", `/events/${eventData.id}/alerts/${alertData.id}`, ["alert"]);
+  const { mutate: deleteAlert } = useMutation("DELETE", `/events/${eventData.id}/alerts/${alertData.id}`, ["alert"]);
   //is that the right end point?
 
   const toggleExpand = () => {
@@ -47,6 +48,7 @@ const AlertEditing = ({ eventData, alertData }) => {
           <button type="submit">Submit</button>
         </form>
       }
+      <button onClick={() => deleteAlert(alertData)}>Delete Alert</button>
     </>
   )
 }
