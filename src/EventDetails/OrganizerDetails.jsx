@@ -22,7 +22,7 @@ export default function OrganizerView({ event }) {
       <h1>{event.name}</h1>
       <h2>{event.location}</h2>
       <p>
-        {event.star_time} to {event.end_time}
+        {event.start_time} to {event.end_time}
       </p>
 
       <section>
@@ -59,11 +59,11 @@ export default function OrganizerView({ event }) {
 
       <section>
         <h2>Roster</h2>
-        <Link to={``}>View Event Roster</Link>
+        <Link to={`/events/${event.id}/roster`}>View Event Roster</Link>
       </section>
 
       <div>
-        <Link to={``}>Create New Task</Link>
+        <Link to={`/events/${event.id}/tasks`}>Create New Task</Link>
         <br />
         <Link to={``}>Edit Event Settings</Link>
       </div>
