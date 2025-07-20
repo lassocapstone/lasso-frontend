@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import useQuery from "./api/useQuery";
+import useQuery from "../api/useQuery";
 
 export default function OrganizerHome() {
   const {
@@ -21,7 +21,7 @@ export default function OrganizerHome() {
   return (
     <div>
       <h1>Welcome {user.name}</h1>
-      <Link to="">User Profile</Link>
+      <Link to="/profile">User Profile</Link>
 
       <section>
         <h2>Your Events</h2>
@@ -31,14 +31,14 @@ export default function OrganizerHome() {
           <ul>
             {events.map((event) => (
               <li key={event.id}>
-                <Link to={``}>{event.name}</Link>
+                <Link to={`/events/${event.id}`}>{event.name}</Link>
               </li>
             ))}
           </ul>
         )}
       </section>
 
-      <Link to="">Create New Event</Link>
+      <Link to="/events/createEvent">Create New Event</Link>
     </div>
   );
 }

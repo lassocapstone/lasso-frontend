@@ -1,16 +1,16 @@
 import { useParams } from "react-router";
 import useQuery from "../api/useQuery";
-import OrganizerView from "./OrganizerDetails";
-import ManagerView from "./ManagerDetails";
+import OrganizerView from "./OrganizerView";
+import ManagerView from "./ManagerView";
 
 function EventDetails() {
-  const { id } = useParams();
+  const { eventId } = useParams();
 
   const {
     data: event,
     loading: eventLoading,
     error: eventError,
-  } = useQuery(`/events/${id}`, `events`);
+  } = useQuery(`/events/${eventId}`, `events`);
 
   const {
     data: user,
@@ -25,9 +25,6 @@ function EventDetails() {
   }
   if (!event) return <p>You do not have permission to view this event.</p>;
 
-  console.log(user);
-  console.log(event);
-  console.log(id);
   switch (user.account_type) {
     case "org":
       return <OrganizerView event={event} />;

@@ -1,4 +1,4 @@
-import useMutation from "./api/useMutation";
+import useMutation from "../api/useMutation";
 
 const AlertCreation = () => {
   const { mutate: add } = useMutation("POST", "/alert", ["alert"]);

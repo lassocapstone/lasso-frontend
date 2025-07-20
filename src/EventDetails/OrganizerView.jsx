@@ -54,7 +54,7 @@ export default function OrganizerView({ event }) {
             ))}
           </ul>
         )}
-        <Link to={``}>View All Tasks</Link>
+        <Link to={`./tasks`}>View All Tasks</Link>
       </section>
 
       <section>
@@ -63,7 +63,7 @@ export default function OrganizerView({ event }) {
       </section>
 
       <div>
-        <Link to={`/events/${event.id}/tasks`}>Create New Task</Link>
+        <Link to={`./tasks/createTask`}>Create New Task</Link>
         <br />
         <Link to={`./settings`}>Edit Event Settings</Link>
       </div>

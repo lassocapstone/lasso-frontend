@@ -1,4 +1,4 @@
-import useQuery from "./api/useQuery";
+import useQuery from "../api/useQuery";
 import AlertsExpand from './AlertsExpand';
 
 const Alerts = () => {

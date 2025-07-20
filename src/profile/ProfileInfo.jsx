@@ -1,14 +1,21 @@
-import useQuery from "./api/useQuery";
+import useQuery from "../api/useQuery";
 
 const ProfileInfo = () => {
-  const { data: profileData } = useQuery("/users", "profile");
+  const { 
+    data: profileData,
+    loading,
+    error } = useQuery("/users", "profile");
+
+    if(loading) return <p>Loading...</p>
+    if(error) return <p>Sorry! {error}</p>
+    if(!profileData) return <p>That user does not exist.</p>
 
   return (
     <>
       {
         profileData &&
         <>
-          <h1>Welcome User {profileData.name}!</h1>
+          <h1>Welcome {profileData.name}!</h1>
           <h2>Here is Your User Profile Info</h2>
           <p>User ID: {profileData.id}</p>
           <p>Name: {profileData.name}</p>

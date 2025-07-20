@@ -1,4 +1,4 @@
-import useMutation from "./api/useMutation";
+import useMutation from "../api/useMutation";
 import { useNavigate } from 'react-router';
 
 const PickAccountType = () => {
@@ -9,8 +9,7 @@ const PickAccountType = () => {
   const addAccountType = (formData) => {
     const accountType = formData.get("accountType");
     add({ accountType });
-    navigate('/');
-    //update navigate route to home page of whichever accounttype
+    navigate("/profile");
   };
 
   return (

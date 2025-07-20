@@ -1,4 +1,4 @@
-import useMutation from "./api/useMutation";
+import useMutation from "../api/useMutation";
 import { useState } from "react";
 
 const AlertEditing = ({ eventData, alertData }) => {

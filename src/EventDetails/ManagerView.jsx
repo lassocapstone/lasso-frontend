@@ -25,6 +25,16 @@ export default function ManagerView({ event }) {
         {event.start_time} to {event.end_time}
       </p>
       <section>
+        <h2>Alerts</h2>
+        {!alerts || alerts.length === 0 ? (
+          <p>No alerts</p>
+        ) : (
+          <div>
+          
+          </div>
+        )}
+      </section>
+      <section>
         <h2>Tasks</h2>
         {!tasks || tasks.length === 0 ? (
           <p>No tasks created yet.</p>
@@ -37,7 +47,7 @@ export default function ManagerView({ event }) {
             ))}
           </ul>
         )}
-        <Link to={``}>View All Tasks</Link>
+        <Link to={`./tasks`}>View All Tasks</Link>
       </section>
 
       <section>

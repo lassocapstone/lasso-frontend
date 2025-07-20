@@ -1,8 +1,10 @@
-import useQuery from "./api/useQuery";
-import TasksExpand from './TasksExpand';
+import { useParams } from "react-router";
+import useQuery from "../api/useQuery";
+import TasksExpand from "./TasksExpand";
 
 const Tasks = () => {
-  const { data: tasksData } = useQuery('/tasks', "task");
+  const {eventId} = useParams();
+  const { data: tasksData } = useQuery(`/events/${eventId}/tasks`, "task");
 
   return (
     <>

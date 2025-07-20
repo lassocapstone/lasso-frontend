@@ -1,9 +1,9 @@
 //use actual event name when the endpoint is available
-import useQuery from "./api/useQuery";
-import ManagerView from "./EventDetails/ManagerDetails";
-import Tasks from "./Tasks";
-import { Link } from "react-router";
+import useQuery from "../api/useQuery";
+import ManagerView from "../EventDetails/ManagerView";
+import Tasks from "../Tasks/Tasks";
 import OrganizerHome from "./OrganizerHomePage";
+
 const AccountHomePage = () => {
   const { data: userData } = useQuery("/users", "user");
   const { data: eventsData } = useQuery("/events", "event");
