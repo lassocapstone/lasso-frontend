@@ -14,7 +14,7 @@ export default function Navbar() {
       <nav>
         {token ? (
           <>
-            <NavLink to="/profile">User Profile</NavLink>
+            <NavLink to="/account">Your Account</NavLink>
             <button onClick={() => {
               logout();
               navigate('/');
