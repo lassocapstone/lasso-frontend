@@ -20,7 +20,7 @@ export const Roster = () => {
         <> 
           <h1>Managers</h1>
           {roster.managers.map((manager) => {
-            return <RosterMemberDisplay member={manager} />
+            return <RosterMemberDisplay key={manager.id} member={manager} />
           })}
         </>
         }
@@ -30,7 +30,7 @@ export const Roster = () => {
       {managerDetails}
       <h1>Subordinates</h1>
         {roster.subordinates.map((subordinate) => {
-        return <RosterMemberDisplay member={subordinate} />
+        return <RosterMemberDisplay key={subordinate.id} member={subordinate} />
       })}
     </>
   )
