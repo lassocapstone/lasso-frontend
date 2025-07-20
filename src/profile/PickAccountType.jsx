@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router';
 
 const PickAccountType = () => {
   const { mutate: add } = useMutation("PUT", "/users", ["user"]);
-  //should be put or patch request?
   const navigate = useNavigate();
 
   const addAccountType = (formData) => {
