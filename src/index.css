@@ -3,7 +3,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: Monaco;
-  background-color: beige;
 }
 
 form,
@@ -67,4 +66,12 @@ ol {
 .toggle {
   display: flex;
   align-items: space-around;
+}
+
+li {
+  list-style-type: none;
+}
+
+body {
+  background-color: beige;
 }
