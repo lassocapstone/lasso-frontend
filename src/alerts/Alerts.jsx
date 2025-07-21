@@ -10,7 +10,7 @@ const Alerts = () => {
       {
         alertsData &&
         alertsData.map(alert => (
-          <ul key={alert.id}>
+          <ul className="taskborders" key={alert.id} tabIndex="0">
             <AlertsExpand alert={alert} />
           </ul>
         ))

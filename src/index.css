@@ -2,6 +2,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Monaco;
+  background-color: beige;
 }
 
 form,
@@ -44,4 +46,20 @@ ol {
 
 .radio {
   display: flex;
+}
+
+.taskborders {
+  border: 3px dashed black;
+  border-radius: 10%;
+  background-color: brown;
+  color: white;
+  padding: 10px;
+}
+
+.taskborders:focus {
+  border: 5px ridge lightgreen;
+  border-radius: 10%;
+  box-shadow: 5px 5px 5px yellowgreen;
+  background-image: linear-gradient(-45deg, yellowgreen, darkgreen);
+  padding: 10px;
 }
