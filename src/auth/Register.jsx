@@ -17,7 +17,7 @@ export default function Register() {
     const contact_number = formData.get("telephone");
     try {
       await register({ name, username, password, contact_number });
-      navigate("/");
+      navigate("/pickaccount");
     } catch (e) {
       setError(e.message);
     }

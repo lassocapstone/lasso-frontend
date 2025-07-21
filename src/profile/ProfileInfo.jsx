@@ -23,9 +23,9 @@ const ProfileInfo = () => {
             profileData.account_type === 'org' ? 'Organizer' :
               profileData.account_type === 'sub' ? 'Subordinate' : null}</p>
           <p>Contact Number: {`(${profileData.contact_number.substring(0, 3)}) ${profileData.contact_number.substring(3, 6)}-${profileData.contact_number.substring(6, 10)}`}</p>
-          {profileData.role && <p>`Role: ${profileData.role}`</p>}
+          {profileData.role && <p>Role: {profileData.role}</p>}
           <p>Status: {profileData.status ? "good" : "bad"}</p>
-          <p>Emergency Contact ID: {profileData.emergency_contact_id}</p>
+          {profileData.emergency_contact_id && <p>Emergency Contact ID: {profileData.emergency_contact_id}</p>}
         </>
       }
     </>
