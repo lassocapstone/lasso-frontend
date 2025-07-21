@@ -4,7 +4,7 @@ import { useParams } from "react-router";
 
 const TasksExpand = ({ task }) => {
   const [isExpanded, setIsExpanded] = useState(false);
-  const {eventId} = useParams();
+  const { eventId } = useParams();
 
   const {
     mutate: deleteTask,
@@ -22,7 +22,7 @@ const TasksExpand = ({ task }) => {
 
   return (
     <>
-      <li onClick={toggleExpand}>
+      <li className="toggle" onClick={toggleExpand}>
         <h3>Task: {task.name}</h3>
         <span>{isExpanded ? '▲' : '▼'}</span>
       </li>

@@ -3,7 +3,7 @@ import useQuery from "../api/useQuery";
 import TasksExpand from "./TasksExpand";
 
 const Tasks = () => {
-  const {eventId} = useParams();
+  const { eventId } = useParams();
   const { data: tasksData } = useQuery(`/events/${eventId}/tasks`, "task");
 
   return (
@@ -12,7 +12,7 @@ const Tasks = () => {
       {
         tasksData &&
         tasksData.map(task => (
-          <ul key={task.id}>
+          <ul className="tasksborders" key={task.id} tabIndex="0">
             <TasksExpand task={task} />
           </ul>
         ))

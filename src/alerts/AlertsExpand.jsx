@@ -9,7 +9,7 @@ const AlertsExpand = ({ alert }) => {
 
   return (
     <>
-      <li onClick={toggleExpand}>
+      <li className="toggle" onClick={toggleExpand}>
         <h3>Alert {alert.id}</h3>
         <span>{isExpanded ? '▲' : '▼'}</span>
       </li>
