@@ -1,7 +1,7 @@
 //use actual event name when the endpoint is available
 import useQuery from "../api/useQuery";
 import ManagerView from "../EventDetails/ManagerView";
-import Tasks from "../Tasks/Tasks";
+import Tasks from "../tasks/Tasks";
 import OrganizerHome from "./OrganizerHomePage";
 
 const AccountHomePage = () => {
