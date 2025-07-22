@@ -56,7 +56,7 @@ export default function ManagerView({ event }) {
       </section>
 
       <div>
-        <Link to={``}>Create New Alert</Link>
+        <Link to={`./alerts`}>Create New Alert</Link>
       </div>
     </>
   );

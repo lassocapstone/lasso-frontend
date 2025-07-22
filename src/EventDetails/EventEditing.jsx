@@ -3,7 +3,7 @@ import useMutation from "../api/useMutation";
 
 const EventEditing = ({ eventData }) => {
   const { mutate: edit } = useMutation("PUT", `/events/${eventData.id}/settings`, ["event"]);
-  const { mutate: deleteEvent } = useMutation("DELETE", `/events/${eventData.id}/settings`, ["event"]);
+  const { mutate: remove } = useMutation("DELETE", `/events/${eventData.id}/settings`, ["event"]);
   const navigate = useNavigate();
 
   const editEvent = (formData) => {
@@ -14,6 +14,11 @@ const EventEditing = ({ eventData }) => {
     edit({ name, startTime, endTime, location });
     navigate(`/events/${eventData.id}`);
   };
+
+  const deleteEvent = () => {
+    remove();
+    navigate(`/account`);
+  }
 
   return (
     <>
@@ -35,7 +40,7 @@ const EventEditing = ({ eventData }) => {
         </label>
         <button type="submit">Submit</button>
       </form>
-      <button onClick={() => deleteEvent(eventData)}>Delete Event</button>
+      <button onClick={() => deleteEvent()}>Delete Event</button>
     </>
   )
 }
