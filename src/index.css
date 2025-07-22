@@ -3,7 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: Monaco;
-  background-color: beige;
+
 }
 
 form,
@@ -48,23 +48,55 @@ ol {
   display: flex;
 }
 
+.toggle {
+  display: flex;
+  align-items: space-around;
+}
+
+body {
+  background-color: beige;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+button {
+  padding: 5px;
+}
+
+.event {
+  display: grid;
+  border: 1px solid black;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 5px 5px 5px yellowgreen;
+  background: linear-gradient(-45deg, yellowgreen, darkgreen);
+  color: white;
+  text-decoration: none;
+}
+
+ul {
+  padding: 0px;
+}
+
+li {
+  list-style-type: none;
+}
+
 .taskborders {
   border: 3px dashed black;
-  border-radius: 10%;
   background-color: brown;
   color: white;
-  padding: 10px;
+  padding: 5px;
 }
 
 .taskborders:focus {
   border: 5px ridge lightgreen;
   border-radius: 10%;
   box-shadow: 5px 5px 5px yellowgreen;
-  background-image: linear-gradient(-45deg, yellowgreen, darkgreen);
+  background: linear-gradient(-45deg, yellowgreen, darkgreen);
   padding: 10px;
-}
-
-.toggle {
-  display: flex;
-  align-items: space-around;
 }

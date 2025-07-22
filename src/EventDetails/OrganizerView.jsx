@@ -19,7 +19,7 @@ export default function OrganizerView({ event }) {
 
   return (
     <>
-      <h1>{event.name}</h1>
+      <h1 className="event">{event.name}</h1>
       <h2>{event.location}</h2>
       <p>
         {event.start_time} to {event.end_time}
@@ -49,12 +49,13 @@ export default function OrganizerView({ event }) {
           <ul>
             {tasks.map((task) => (
               <>
-                <li key={task.id}>{task.name}</li>
+                <li key={task.id} className="taskborders">{task.name}</li>
               </>
             ))}
           </ul>
         )}
-        <Link to={`./tasks`}>View All Tasks</Link>
+        <Link to={`./tasks`}>View All Tasks</Link><br />
+        <Link to={`./tasks/createTask`}>Create New Task</Link>
       </section>
 
       <section>
@@ -63,7 +64,6 @@ export default function OrganizerView({ event }) {
       </section>
 
       <div>
-        <Link to={`./tasks/createTask`}>Create New Task</Link>
         <br />
         <Link to={`./settings`}>Edit Event Settings</Link>
       </div>
