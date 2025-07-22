@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router";
 import useMutation from "../api/useMutation";
 
 const EventCreate = ({ eventData }) => {
@@ -6,12 +7,15 @@ const EventCreate = ({ eventData }) => {
     loading,
     error } = useMutation("POST", `/events`, ["event"]);
 
+  const navigate = useNavigate();
+
   const addEvent = (formData) => {
     const name = formData.get("name");
     const startTime = formData.get("start_time");
     const endTime = formData.get("end_time");
     const location = formData.get("location");
     add({ name, startTime, endTime, location });
+    navigate(`/account`);
   };
 
   return (

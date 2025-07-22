@@ -1,9 +1,10 @@
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import useMutation from "../api/useMutation";
 
 const TaskCreation = () => {
   const {eventId} = useParams();
   const { mutate: add, loading, error } = useMutation("POST", `/events/${eventId}/tasks`, ["task"]);
+  const navigate = useNavigate();
 
   const addTask = (formData) => {
     const name = formData.get("name");
@@ -12,6 +13,7 @@ const TaskCreation = () => {
     const location = formData.get("location");
     const instructions = formData.get("instructions");
     add({ eventId, name, startTime, endTime, location, instructions });
+    navigate(`/events/${eventId}/tasks`);
   };
 
   return (
