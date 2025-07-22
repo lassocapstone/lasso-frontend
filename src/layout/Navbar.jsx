@@ -9,7 +9,8 @@ export default function Navbar() {
   return (
     <header id="navbar">
       <NavLink id="brand" to="/">
-        <p>Lasso</p>
+        <p>Lasso<img src="Lasso_Logo.png" width="20px" height="20px" /></p>
+
       </NavLink>
       <nav>
         {token ? (

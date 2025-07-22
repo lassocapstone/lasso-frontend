@@ -12,7 +12,7 @@ const Tasks = () => {
       {
         tasksData &&
         tasksData.map(task => (
-          <ul className="tasksborders" key={task.id} tabIndex="0">
+          <ul className="taskborders" key={task.id} tabIndex="0">
             <TasksExpand task={task} />
           </ul>
         ))

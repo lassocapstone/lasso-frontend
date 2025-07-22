@@ -31,7 +31,7 @@ export default function OrganizerHome() {
           <ul>
             {events.map((event) => (
               <li key={event.id}>
-                <Link to={`/events/${event.id}`}>{event.name}</Link>
+                <Link to={`/events/${event.id}`} className="event">{event.name}</Link>
               </li>
             ))}
           </ul>
